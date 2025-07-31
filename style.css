@@ -1,0 +1,234 @@
+/* GERAL E TEMA MODERNO (DARK MODE) */
+:root {
+    --primary-color: #e03b8d; /* Rosa/Magenta vibrante para destaque */
+    --background-color: #1a1a2e; /* Azul escuro/quase preto */
+    --text-color: #f0f0f0;
+    --text-color-light: #a9a9d4;
+    --input-bg-color: #2a2a4e;
+    --border-color: #4a4a7a;
+    --font-family: 'Nunito', sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.form-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+form {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* BARRA DE PROGRESSO */
+.progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.progress-bar-fill {
+    height: 100%;
+    width: 0%;
+    background-color: var(--primary-color);
+    transition: width 0.4s ease-in-out;
+}
+
+/* ESTRUTURA DAS ETAPAS (SLIDES) */
+.form-step {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+    pointer-events: none;
+}
+
+.form-step.active-step {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+}
+
+.step-content {
+    max-width: 600px;
+    width: 100%;
+    text-align: left;
+}
+
+.question-title {
+    font-size: 2em;
+    font-weight: 600;
+    margin-bottom: 40px;
+    line-height: 1.4;
+    display: flex;
+    align-items: center;
+}
+
+.question-number {
+    color: var(--primary-color);
+    margin-right: 15px;
+    font-weight: 700;
+}
+
+/* INPUTS MODERNOS */
+.modern-input, .modern-textarea {
+    width: 100%;
+    background: none;
+    border: none;
+    border-bottom: 2px solid var(--border-color);
+    padding: 10px 0;
+    font-size: 1.8em;
+    color: var(--text-color);
+    font-family: var(--font-family);
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.modern-input:focus, .modern-textarea:focus {
+    border-bottom-color: var(--primary-color);
+}
+
+.instruction {
+    margin-top: 15px;
+    color: var(--text-color-light);
+    font-size: 0.9em;
+}
+
+kbd {
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+/* OPÇÕES DE ESCOLHA (BOTÕES) */
+.choice-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.choice-group input[type="radio"] {
+    display: none;
+}
+
+.choice-group label {
+    display: block;
+    background-color: var(--input-bg-color);
+    border: 1px solid var(--border-color);
+    padding: 15px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 1.2em;
+}
+
+.choice-group label:hover {
+    background-color: rgba(224, 59, 141, 0.2);
+    border-color: var(--primary-color);
+}
+
+.choice-group input[type="radio"]:checked + span {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #fff;
+    font-weight: 600;
+}
+/* This selector was wrong, corrected to target the label */
+.choice-group input[type="radio"]:checked + span {
+    /* No-op, styling the parent label instead */
+}
+.choice-group input[type="radio"]:checked ~ label { /* this is also wrong */
+    /* no-op */
+}
+/* Correct way: Target the label associated with the checked radio */
+.choice-group input[type="radio"]:checked + label {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #fff;
+    font-weight: 600;
+}
+
+/* BOTÕES DE NAVEGAÇÃO E ENVIO */
+.nav-button, .submit-button {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 15px 35px;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-family: var(--font-family);
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nav-button:hover, .submit-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(224, 59, 141, 0.3);
+}
+
+.final-step {
+    text-align: center;
+}
+.final-step p {
+    font-size: 1.2em;
+    color: var(--text-color-light);
+    margin-bottom: 30px;
+}
+
+/* AVALIAÇÃO POR ESTRELAS */
+.rating {
+    display: flex; justify-content: center; direction: rtl; font-size: 3em; color: var(--border-color);
+}
+.rating input[type="radio"] { display: none; }
+.rating label {
+    cursor: pointer; padding: 0 8px; transition: color 0.3s ease;
+}
+.rating label:before { content: '★'; }
+.rating input[type="radio"]:checked ~ label,
+.rating label:hover,
+.rating label:hover ~ label { color: var(--primary-color); }
+
+
+/* FEEDBACK */
+#feedbackMessage {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    display: none;
+    animation: fade-in-up 0.5s ease;
+}
+@keyframes fade-in-up { from { opacity: 0; transform: translate(-50%, 20px); } to { opacity: 1; transform: translate(-50%, 0); } }
+#feedbackMessage.success { background-color: #28a745; color: #fff; }
+#feedbackMessage.error { background-color: #dc3545; color: #fff; }

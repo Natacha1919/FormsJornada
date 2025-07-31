@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa de Satisfação - VI Jornada Acadêmica</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-container">
+        <form id="presenceForm">
+            <!-- Barra de Progresso mantida e integrada ao topo -->
+            <div class="progress-bar">
+                <div class="progress-bar-fill"></div>
+            </div>
+
+            <!-- Etapa 1: Nome -->
+            <div class="form-step" data-step="1">
+                <div class="step-content">
+                    <h1 class="question-title">
+                        <span class="question-number">1 →</span>
+                        Primeiro, qual é o seu nome? *
+                    </h1>
+                    <input type="text" id="Nome_Completo" name="Nome_Completo" placeholder="Digite seu nome aqui" class="modern-input" required>
+                    <div class="instruction">Pressione <kbd>Enter</kbd> para continuar</div>
+                </div>
+            </div>
+
+            <!-- Etapa 2: Comunicação Pré-Evento -->
+            <div class="form-step" data-step="2">
+                <div class="step-content">
+                    <h1 class="question-title"><span class="question-number">2 →</span>A comunicação pré-evento foi clara e eficiente? *</h1>
+                    <div class="choice-group">
+                        <label><input type="radio" name="Comunicacao_Pre_Evento" value="Sim" required><span>Sim</span></label>
+                        <label><input type="radio" name="Comunicacao_Pre_Evento" value="Nao"><span>Não</span></label>
+                        <label><input type="radio" name="Comunicacao_Pre_Evento" value="Outros"><span>Outros...</span></label>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Etapa 3: Temas -->
+            <div class="form-step" data-step="3">
+                 <div class="step-content">
+                    <h1 class="question-title"><span class="question-number">3 →</span>Como você avalia os temas abordados? *</h1>
+                    <div class="choice-group">
+                        <label><input type="radio" name="Avaliacao_Temas" value="Muito relevante" required><span>Muito relevante</span></label>
+                        <label><input type="radio" name="Avaliacao_Temas" value="Relevante"><span>Relevante</span></label>
+                        <label><input type="radio" name="Avaliacao_Temas" value="Pouco relevante"><span>Pouco relevante</span></label>
+                        <label><input type="radio" name="Avaliacao_Temas" value="Irrelevante"><span>Irrelevante</span></label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Etapa 4: Sugestões -->
+            <div class="form-step" data-step="4">
+                <div class="step-content">
+                    <h1 class="question-title"><span class="question-number">4 →</span>Tem alguma sugestão sobre formações futuras?</h1>
+                    <textarea id="Sugestao_Formacao" name="Sugestao_Formacao" rows="4" placeholder="Sua opinião é bem-vinda..." class="modern-textarea"></textarea>
+                    <button type="button" class="nav-button next-button">Continuar</button>
+                </div>
+            </div>
+            
+            <!-- Etapa 5: Avaliação Geral -->
+            <div class="form-step" data-step="5">
+                <div class="step-content">
+                    <h1 class="question-title"><span class="question-number">5 →</span>E para finalizar, como você avalia o evento de forma geral? *</h1>
+                    <div class="rating">
+                        <input type="radio" id="star5" name="Avaliacao_Geral_Jornada" value="5" required><label for="star5" title="5 estrelas"></label>
+                        <input type="radio" id="star4" name="Avaliacao_Geral_Jornada" value="4"><label for="star4" title="4 estrelas"></label>
+                        <input type="radio" id="star3" name="Avaliacao_Geral_Jornada" value="3"><label for="star3" title="3 estrelas"></label>
+                        <input type="radio" id="star2" name="Avaliacao_Geral_Jornada" value="2"><label for="star2" title="2 estrelas"></label>
+                        <input type="radio" id="star1" name="Avaliacao_Geral_Jornada" value="1"><label for="star1" title="1 estrela"></label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Etapa Final: Envio -->
+            <div class="form-step" data-step="6">
+                <div class="step-content final-step">
+                    <h1 class="question-title">Tudo pronto!</h1>
+                    <p>Clique abaixo para enviar sua avaliação. Muito obrigado pela sua colaboração!</p>
+                    <button type="submit" class="submit-button">
+                        <span class="button-text">Enviar Avaliação</span>
+                        <span class="button-loader"></span>
+                    </button>
+                </div>
+            </div>
+
+        </form>
+        <div id="feedbackMessage"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
