@@ -1,10 +1,10 @@
 /* GERAL E TEMA MODERNO (DARK MODE) */
 :root {
-    --primary-color: #e03b8d; /* Rosa/Magenta vibrante para destaque */
-    --background-color: #1a1a2e; /* Azul escuro/quase preto */
+    --primary-color: #33DB89; /* Rosa/Magenta vibrante para destaque */
+    --background-color: #1A3666   ; /* Azul escuro/quase preto */
     --text-color: #f0f0f0;
     --text-color-light: #a9a9d4;
-    --input-bg-color: #2a2a4e;
+    --input-bg-color: #1A3666   ;
     --border-color: #4a4a7a;
     --font-family: 'Nunito', sans-serif;
 }
@@ -195,12 +195,22 @@ kbd {
 }
 
 .final-step {
+    display: flex;
     text-align: center;
+    flex-direction: column;
+    align-items: center;
 }
+
+.final-step h1{
+    font-size: 2.5em;
+    color: var(--primary-color);
+}
+
 .final-step p {
     font-size: 1.2em;
-    color: var(--text-color-light);
+    color: var(--text-color-light); /* Usa a cor secundária mais clara */
     margin-bottom: 30px;
+    max-width: 400px; /* Evita que a linha de texto fique muito longa em telas grandes */
 }
 
 /* AVALIAÇÃO POR ESTRELAS */
