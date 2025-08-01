@@ -1,11 +1,11 @@
-/* GERAL E TEMA MODERNO (DARK MODE) */
+/* GERAL E TEMA MODERNO */
 :root {
-    --primary-color: #33DB89; /* Rosa/Magenta vibrante para destaque */
-    --background-color: #1A3666   ; /* Azul escuro/quase preto */
-    --text-color: #f0f0f0;
-    --text-color-light: #a9a9d4;
-    --input-bg-color: #1A3666   ;
-    --border-color: #4a4a7a;
+    --primary-color: #28d384;
+    --background-color: #1f3659;
+    --text-color: #ffffff;
+    --text-color-light: #c1cde0;
+    --input-bg-color: #2a3f65;
+    --border-color: #4a5f8a;
     --font-family: 'Nunito', sans-serif;
 }
 
@@ -21,222 +21,110 @@ body {
     overflow: hidden;
 }
 
-.form-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-form {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
+.form-container, form {
+    width: 100%; height: 100%; position: relative; overflow: hidden;
 }
 
 /* BARRA DE PROGRESSO */
 .progress-bar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 6px;
-    background-color: rgba(255, 255, 255, 0.1);
+    position: absolute; top: 0; left: 0; width: 100%; height: 6px; background-color: rgba(255, 255, 255, 0.1);
 }
-
 .progress-bar-fill {
-    height: 100%;
-    width: 0%;
-    background-color: var(--primary-color);
-    transition: width 0.4s ease-in-out;
+    height: 100%; width: 0%; background-color: var(--primary-color); transition: width 0.4s ease-in-out;
 }
 
 /* ESTRUTURA DAS ETAPAS (SLIDES) */
 .form-step {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    box-sizing: border-box;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+    position: absolute; width: 100%; height: 100%; display: flex; justify-content: center;
+    align-items: center; padding: 20px; box-sizing: border-box; opacity: 0;
+    transform: translateY(30px); transition: opacity 0.4s ease-out, transform 0.4s ease-out;
     pointer-events: none;
 }
-
 .form-step.active-step {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: all;
+    opacity: 1; transform: translateY(0); pointer-events: all;
 }
 
 .step-content {
-    max-width: 600px;
-    width: 100%;
-    text-align: left;
+    max-width: 700px; width: 100%; text-align: center;
 }
 
+/* --- AQUI ESTÁ A CORREÇÃO VISUAL --- */
 .question-title {
-    font-size: 2em;
+    font-size: 1.8em;
     font-weight: 600;
     margin-bottom: 40px;
     line-height: 1.4;
-    display: flex;
-    align-items: center;
+    /* Removemos o display:flex daqui para simplificar */
 }
 
+/* Opcional: Escondemos o número da pergunta, como na imagem de exemplo */
 .question-number {
-    color: var(--primary-color);
-    margin-right: 15px;
-    font-weight: 700;
+    display: none;
 }
+/* --- FIM DA CORREÇÃO VISUAL --- */
 
-/* INPUTS MODERNOS */
+/* INPUT DE NOME */
 .modern-input, .modern-textarea {
-    width: 100%;
-    background: none;
-    border: none;
-    border-bottom: 2px solid var(--border-color);
-    padding: 10px 0;
-    font-size: 1.8em;
-    color: var(--text-color);
-    font-family: var(--font-family);
-    outline: none;
-    transition: border-color 0.3s ease;
+    width: 100%; background: none; border: none; border-bottom: 2px solid var(--border-color);
+    padding: 10px 0; font-size: 1.8em; color: var(--text-color); font-family: var(--font-family);
+    outline: none; transition: border-color 0.3s ease; text-align: center; box-sizing: border-box;
 }
-
 .modern-input:focus, .modern-textarea:focus {
     border-bottom-color: var(--primary-color);
 }
-
+.modern-textarea {
+    min-height: 120px; font-size: 1.2em; line-height: 1.5; resize: vertical;
+}
 .instruction {
-    margin-top: 15px;
-    color: var(--text-color-light);
-    font-size: 0.9em;
+    margin-top: 15px; color: var(--text-color-light); font-size: 0.9em;
 }
-
 kbd {
-    background-color: rgba(255, 255, 255, 0.15);
-    padding: 3px 6px;
-    border-radius: 4px;
-    font-family: inherit;
+    background-color: rgba(255, 255, 255, 0.15); padding: 3px 6px; border-radius: 4px; font-family: inherit;
 }
 
-/* OPÇÕES DE ESCOLHA (BOTÕES) */
-.choice-group {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+/* ESCALA LIKERT */
+.likert-scale {
+    display: flex; justify-content: center; gap: 15px; margin-bottom: 20px;
+}
+.likert-scale input[type="radio"] { display: none; }
+.likert-scale label {
+    display: flex; align-items: center; justify-content: center; width: 50px; height: 50px;
+    border: 2px solid var(--border-color); border-radius: 50%; cursor: pointer;
+    font-size: 1.2em; font-weight: 600; transition: all 0.2s ease-in-out;
+}
+.likert-scale label:hover {
+    border-color: var(--primary-color); color: var(--primary-color); transform: scale(1.1);
+}
+.likert-scale input[type="radio"]:checked + label {
+    background-color: var(--primary-color); border-color: var(--primary-color);
+    color: var(--background-color); transform: scale(1.1);
+}
+.likert-legend {
+    display: flex; justify-content: space-between; max-width: 450px; margin: 0 auto;
+    color: var(--text-color-light); font-size: 0.9em;
 }
 
-.choice-group input[type="radio"] {
-    display: none;
-}
-
-.choice-group label {
-    display: block;
-    background-color: var(--input-bg-color);
-    border: 1px solid var(--border-color);
-    padding: 15px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    font-size: 1.2em;
-}
-
-.choice-group label:hover {
-    background-color: rgba(224, 59, 141, 0.2);
-    border-color: var(--primary-color);
-}
-
-.choice-group input[type="radio"]:checked + span {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
-    color: #fff;
-    font-weight: 600;
-}
-/* This selector was wrong, corrected to target the label */
-.choice-group input[type="radio"]:checked + span {
-    /* No-op, styling the parent label instead */
-}
-.choice-group input[type="radio"]:checked ~ label { /* this is also wrong */
-    /* no-op */
-}
-/* Correct way: Target the label associated with the checked radio */
-.choice-group input[type="radio"]:checked + label {
-    background-color: var(--primary-color);
-    border-color: var(--primary-color);
-    color: #fff;
-    font-weight: 600;
-}
-
-/* BOTÕES DE NAVEGAÇÃO E ENVIO */
-.nav-button, .submit-button {
-    background-color: var(--primary-color);
-    color: #fff;
-    border: none;
-    padding: 15px 35px;
-    border-radius: 8px;
-    font-size: 1.2em;
-    font-family: var(--font-family);
-    font-weight: 600;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.nav-button:hover, .submit-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(224, 59, 141, 0.3);
-}
-
+/* TELA E BOTÃO FINAL */
 .final-step {
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    align-items: center;
+    display: flex; flex-direction: column; align-items: center; text-align: center;
 }
-
-.final-step h1{
-    font-size: 2.5em;
-    color: var(--primary-color);
-}
-
+.final-step h1 { font-size: 2.5em; }
 .final-step p {
-    font-size: 1.2em;
-    color: var(--text-color-light); /* Usa a cor secundária mais clara */
-    margin-bottom: 30px;
-    max-width: 400px; /* Evita que a linha de texto fique muito longa em telas grandes */
+    font-size: 1.2em; color: var(--text-color-light); margin-bottom: 30px; max-width: 400px;
 }
-
-/* AVALIAÇÃO POR ESTRELAS */
-.rating {
-    display: flex; justify-content: center; direction: rtl; font-size: 3em; color: var(--border-color);
+.nav-button, .submit-button {
+    background-color: var(--primary-color); color: #fff; border: none; padding: 15px 35px;
+    border-radius: 8px; font-size: 1.2em; font-family: var(--font-family); font-weight: 600;
+    cursor: pointer; margin-top: 20px; transition: all 0.2s ease;
 }
-.rating input[type="radio"] { display: none; }
-.rating label {
-    cursor: pointer; padding: 0 8px; transition: color 0.3s ease;
+.nav-button:hover, .submit-button:hover {
+    transform: translateY(-2px); box-shadow: 0 4px 15px rgba(40, 211, 132, 0.3);
 }
-.rating label:before { content: '★'; }
-.rating input[type="radio"]:checked ~ label,
-.rating label:hover,
-.rating label:hover ~ label { color: var(--primary-color); }
-
 
 /* FEEDBACK */
 #feedbackMessage {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 15px 25px;
-    border-radius: 8px;
-    font-weight: 600;
-    display: none;
+    position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+    padding: 15px 25px; border-radius: 8px; font-weight: 600; display: none;
     animation: fade-in-up 0.5s ease;
 }
 @keyframes fade-in-up { from { opacity: 0; transform: translate(-50%, 20px); } to { opacity: 1; transform: translate(-50%, 0); } }

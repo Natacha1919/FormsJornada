@@ -12,7 +12,6 @@
 <body>
     <div class="form-container">
         <form id="presenceForm">
-            <!-- Barra de Progresso mantida e integrada ao topo -->
             <div class="progress-bar">
                 <div class="progress-bar-fill"></div>
             </div>
@@ -20,65 +19,122 @@
             <!-- Etapa 1: Nome -->
             <div class="form-step" data-step="1">
                 <div class="step-content">
-                    <h1 class="question-title">
-                        <span class="question-number">1 →</span>
-                        Primeiro, qual é o seu nome? *
-                    </h1>
+                    <h1 class="question-title"><span class="question-number">→</span>Para começar, qual é o seu nome? *</h1>
                     <input type="text" id="Nome_Completo" name="Nome_Completo" placeholder="Digite seu nome aqui" class="modern-input" required>
                     <div class="instruction">Pressione <kbd>Enter</kbd> para continuar</div>
                 </div>
             </div>
 
-            <!-- Etapa 2: Comunicação Pré-Evento -->
+            <!-- Etapas 2 a 8: Perguntas com Escala Likert (sem alterações) -->
             <div class="form-step" data-step="2">
                 <div class="step-content">
-                    <h1 class="question-title"><span class="question-number">2 →</span>A comunicação pré-evento foi clara e eficiente? *</h1>
-                    <div class="choice-group">
-                        <label><input type="radio" name="Comunicacao_Pre_Evento" value="Sim" required><span>Sim</span></label>
-                        <label><input type="radio" name="Comunicacao_Pre_Evento" value="Nao"><span>Não</span></label>
-                        <label><input type="radio" name="Comunicacao_Pre_Evento" value="Outros"><span>Outros...</span></label>
+                    <h1 class="question-title">O evento contribuiu para minha compreensão sobre práticas docentes inovadoras.</h1>
+                        <div class="likert-scale">
+                        <input type="radio" id="q2_1" name="mercado_trabalho" value="1" required><label for="q2_1" title="Discordo totalmente">1</label>
+                        <input type="radio" id="q2_2" name="mercado_trabalho" value="2" required><label for="q2_2" title="Discordo parcialmente">2</label>
+                        <input type="radio" id="q2_3" name="mercado_trabalho" value="3" required><label for="q2_3" title="Neutro">3</label>
+                        <input type="radio" id="q2_4" name="mercado_trabalho" value="4" required><label for="q2_4" title="Concordo parcialmente">4</label>
+                        <input type="radio" id="q2_5" name="mercado_trabalho" value="5" required><label for="q2_5" title="Concordo totalmente">5</label>
                     </div>
                 </div>
             </div>
-            
-            <!-- Etapa 3: Temas -->
+            <!-- ... (as outras 6 perguntas com a escala Likert continuam aqui) ... -->
+            <!-- Pergunta 3 -->
             <div class="form-step" data-step="3">
-                 <div class="step-content">
-                    <h1 class="question-title"><span class="question-number">3 →</span>Como você avalia os temas abordados? *</h1>
-                    <div class="choice-group">
-                        <label><input type="radio" name="Avaliacao_Temas" value="Muito relevante" required><span>Muito relevante</span></label>
-                        <label><input type="radio" name="Avaliacao_Temas" value="Relevante"><span>Relevante</span></label>
-                        <label><input type="radio" name="Avaliacao_Temas" value="Pouco relevante"><span>Pouco relevante</span></label>
-                        <label><input type="radio" name="Avaliacao_Temas" value="Irrelevante"><span>Irrelevante</span></label>
+                <div class="step-content">
+                    <h1 class="question-title">As experiências apresentadas demonstraram conexão com o mercado de trabalho.</h1>
+                    <div class="likert-scale">
+                        <input type="radio" id="q2_1" name="mercado_trabalho" value="1" required><label for="q2_1" title="Discordo totalmente">1</label>
+                        <input type="radio" id="q2_2" name="mercado_trabalho" value="2" required><label for="q2_2" title="Discordo parcialmente">2</label>
+                        <input type="radio" id="q2_3" name="mercado_trabalho" value="3" required><label for="q2_3" title="Neutro">3</label>
+                        <input type="radio" id="q2_4" name="mercado_trabalho" value="4" required><label for="q2_4" title="Concordo parcialmente">4</label>
+                        <input type="radio" id="q2_5" name="mercado_trabalho" value="5" required><label for="q2_5" title="Concordo totalmente">5</label>
                     </div>
+                    <div class="likert-legend"><span>Discordo totalmente</span><span>Concordo totalmente</span></div>
                 </div>
             </div>
-
-            <!-- Etapa 4: Sugestões -->
+            <!-- Pergunta 4 -->
             <div class="form-step" data-step="4">
-                <div class="step-content">
-                    <h1 class="question-title"><span class="question-number">4 →</span>Tem alguma sugestão sobre formações futuras?</h1>
-                    <textarea id="Sugestao_Formacao" name="Sugestao_Formacao" rows="4" placeholder="Sua opinião é bem-vinda..." class="modern-textarea"></textarea>
-                    <button type="button" class="nav-button next-button">Continuar</button>
+                 <div class="step-content">
+                    <h1 class="question-title">As atividades abordadas evidenciaram o uso de metodologias ativas.</h1>
+                    <div class="likert-scale">
+                        <input type="radio" id="q3_1" name="metodologias_ativas" value="1" required><label for="q3_1" title="Discordo totalmente">1</label>
+                        <input type="radio" id="q3_2" name="metodologias_ativas" value="2" required><label for="q3_2" title="Discordo parcialmente">2</label>
+                        <input type="radio" id="q3_3" name="metodologias_ativas" value="3" required><label for="q3_3" title="Neutro">3</label>
+                        <input type="radio" id="q3_4" name="metodologias_ativas" value="4" required><label for="q3_4" title="Concordo parcialmente">4</label>
+                        <input type="radio" id="q3_5" name="metodologias_ativas" value="5" required><label for="q3_5" title="Concordo totalmente">5</label>
+                    </div>
+                    <div class="likert-legend"><span>Discordo totalmente</span><span>Concordo totalmente</span></div>
                 </div>
             </div>
-            
-            <!-- Etapa 5: Avaliação Geral -->
+            <!-- Pergunta 5 -->
             <div class="form-step" data-step="5">
-                <div class="step-content">
-                    <h1 class="question-title"><span class="question-number">5 →</span>E para finalizar, como você avalia o evento de forma geral? *</h1>
-                    <div class="rating">
-                        <input type="radio" id="star5" name="Avaliacao_Geral_Jornada" value="5" required><label for="star5" title="5 estrelas"></label>
-                        <input type="radio" id="star4" name="Avaliacao_Geral_Jornada" value="4"><label for="star4" title="4 estrelas"></label>
-                        <input type="radio" id="star3" name="Avaliacao_Geral_Jornada" value="3"><label for="star3" title="3 estrelas"></label>
-                        <input type="radio" id="star2" name="Avaliacao_Geral_Jornada" value="2"><label for="star2" title="2 estrelas"></label>
-                        <input type="radio" id="star1" name="Avaliacao_Geral_Jornada" value="1"><label for="star1" title="1 estrela"></label>
+                 <div class="step-content">
+                    <h1 class="question-title">As práticas mostradas estimularam reflexões sobre minha própria atuação docente.</h1>
+                    <div class="likert-scale">
+                        <input type="radio" id="q4_1" name="reflexoes_docente" value="1" required><label for="q4_1" title="Discordo totalmente">1</label>
+                        <input type="radio" id="q4_2" name="reflexoes_docente" value="2" required><label for="q4_2" title="Discordo parcialmente">2</label>
+                        <input type="radio" id="q4_3" name="reflexoes_docente" value="3" required><label for="q4_3" title="Neutro">3</label>
+                        <input type="radio" id="q4_4" name="reflexoes_docente" value="4" required><label for="q4_4" title="Concordo parcialmente">4</label>
+                        <input type="radio" id="q4_5" name="reflexoes_docente" value="5" required><label for="q4_5" title="Concordo totalmente">5</label>
                     </div>
+                    <div class="likert-legend"><span>Discordo totalmente</span><span>Concordo totalmente</span></div>
+                </div>
+            </div>
+            <!-- Pergunta 6 -->
+            <div class="form-step" data-step="6">
+                 <div class="step-content">
+                    <h1 class="question-title">O formato do evento (apresentações, falas, homenagens) foi adequado e envolvente.</h1>
+                    <div class="likert-scale">
+                        <input type="radio" id="q5_1" name="formato_evento" value="1" required><label for="q5_1" title="Discordo totalmente">1</label>
+                        <input type="radio" id="q5_2" name="formato_evento" value="2" required><label for="q5_2" title="Discordo parcialmente">2</label>
+                        <input type="radio" id="q5_3" name="formato_evento" value="3" required><label for="q5_3" title="Neutro">3</label>
+                        <input type="radio" id="q5_4" name="formato_evento" value="4" required><label for="q5_4" title="Concordo parcialmente">4</label>
+                        <input type="radio" id="q5_5" name="formato_evento" value="5" required><label for="q5_5" title="Concordo totalmente">5</label>
+                    </div>
+                    <div class="likert-legend"><span>Discordo totalmente</span><span>Concordo totalmente</span></div>
+                </div>
+            </div>
+            <!-- Pergunta 7 -->
+            <div class="form-step" data-step="7">
+                 <div class="step-content">
+                    <h1 class="question-title">A premiação valorizou iniciativas com impacto positivo na aprendizagem dos alunos.</h1>
+                    <div class="likert-scale">
+                        <input type="radio" id="q6_1" name="premiacao_impacto" value="1" required><label for="q6_1" title="Discordo totalmente">1</label>
+                        <input type="radio" id="q6_2" name="premiacao_impacto" value="2" required><label for="q6_2" title="Discordo parcialmente">2</label>
+                        <input type="radio" id="q6_3" name="premiacao_impacto" value="3" required><label for="q6_3" title="Neutro">3</label>
+                        <input type="radio" id="q6_4" name="premiacao_impacto" value="4" required><label for="q6_4" title="Concordo parcialmente">4</label>
+                        <input type="radio" id="q6_5" name="premiacao_impacto" value="5" required><label for="q6_5" title="Concordo totalmente">5</label>
+                    </div>
+                    <div class="likert-legend"><span>Discordo totalmente</span><span>Concordo totalmente</span></div>
+                </div>
+            </div>
+            <!-- Pergunta 8 -->
+            <div class="form-step" data-step="8">
+                 <div class="step-content">
+                    <h1 class="question-title">A participação no evento ampliou minha motivação para inovar em sala de aula.</h1>
+                    <div class="likert-scale">
+                        <input type="radio" id="q7_1" name="motivacao_inovar" value="1" required><label for="q7_1" title="Discordo totalmente">1</label>
+                        <input type="radio" id="q7_2" name="motivacao_inovar" value="2" required><label for="q7_2" title="Discordo parcialmente">2</label>
+                        <input type="radio" id="q7_3" name="motivacao_inovar" value="3" required><label for="q7_3" title="Neutro">3</label>
+                        <input type="radio" id="q7_4" name="motivacao_inovar" value="4" required><label for="q7_4" title="Concordo parcialmente">4</label>
+                        <input type="radio" id="q7_5" name="motivacao_inovar" value="5" required><label for="q7_5" title="Concordo totalmente">5</label>
+                    </div>
+                    <div class="likert-legend"><span>Discordo totalmente</span><span>Concordo totalmente</span></div>
                 </div>
             </div>
 
-            <!-- Etapa Final: Envio -->
-            <div class="form-step" data-step="6">
+            <!-- NOVA ETAPA: Campo de Sugestão -->
+            <div class="form-step" data-step="9">
+                <div class="step-content">
+                    <h1 class="question-title">Por último, você tem alguma sugestão para os próximos eventos?</h1>
+                    <textarea name="sugestao_final" class="modern-textarea" placeholder="Deixe seu comentário aqui... (opcional)"></textarea>
+                    <button type="button" class="nav-button next-button">Finalizar</button>
+                </div>
+            </div>
+
+            <!-- Etapa Final: Envio (Agora é a etapa 10) -->
+            <div class="form-step" data-step="10">
                 <div class="step-content final-step">
                     <h1 class="question-title">Tudo pronto!</h1>
                     <p>Clique abaixo para enviar sua avaliação. Muito obrigado pela sua colaboração!</p>
