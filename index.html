@@ -16,14 +16,15 @@
                 <div class="progress-bar-fill"></div>
             </div>
 
-            <!-- Etapa 1: Nome -->
-            <div class="form-step" data-step="1">
-                <div class="step-content">
-                    <h1 class="question-title"><span class="question-number">→</span>Para começar, qual é o seu nome? *</h1>
-                    <input type="text" id="Nome_Completo" name="Nome_Completo" placeholder="Digite seu nome aqui" class="modern-input" required>
-                    <div class="instruction">Pressione <kbd>Enter</kbd> para continuar</div>
-                </div>
-            </div>
+<!-- Etapa 1: Nome (MODIFICADA) -->
+<div class="form-step" data-step="1">
+    <div class="step-content">
+        <h1 class="question-title"><span class="question-number">→</span>Para começar, qual é o seu nome? *</h1>
+        <input type="text" id="Nome_Completo" name="Nome_Completo" placeholder="Digite seu nome aqui" class="modern-input" required>
+        <!-- AQUI ESTÁ A MUDANÇA: Adicionamos o botão e removemos a instrução "Enter" -->
+        <button type="button" class="nav-button next-button">Continuar</button>
+    </div>
+</div>
 
             <!-- Etapas 2 a 8: Perguntas com Escala Likert (sem alterações) -->
             <div class="form-step" data-step="2">

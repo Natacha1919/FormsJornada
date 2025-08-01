@@ -1,7 +1,7 @@
 /* GERAL E TEMA MODERNO */
 :root {
-    --primary-color: #28d384;
-    --background-color: #1f3659;
+    --primary-color: #28d384; /* Verde do botão "Enviar" */
+    --background-color: #1f3659; /* Azul escuro do fundo */
     --text-color: #ffffff;
     --text-color-light: #c1cde0;
     --input-bg-color: #2a3f65;
@@ -48,33 +48,31 @@ body {
     max-width: 700px; width: 100%; text-align: center;
 }
 
-/* --- AQUI ESTÁ A CORREÇÃO VISUAL --- */
 .question-title {
-    font-size: 1.8em;
-    font-weight: 600;
-    margin-bottom: 40px;
-    line-height: 1.4;
-    /* Removemos o display:flex daqui para simplificar */
+    font-size: 1.8em; font-weight: 600; margin-bottom: 40px; line-height: 1.4;
 }
-
-/* Opcional: Escondemos o número da pergunta, como na imagem de exemplo */
 .question-number {
-    display: none;
+    color: var(--text-color-light); margin-right: 15px; font-weight: 700;
 }
-/* --- FIM DA CORREÇÃO VISUAL --- */
 
-/* INPUT DE NOME */
+/* INPUTS E TEXTAREA */
 .modern-input, .modern-textarea {
     width: 100%; background: none; border: none; border-bottom: 2px solid var(--border-color);
     padding: 10px 0; font-size: 1.8em; color: var(--text-color); font-family: var(--font-family);
     outline: none; transition: border-color 0.3s ease; text-align: center; box-sizing: border-box;
 }
+
 .modern-input:focus, .modern-textarea:focus {
     border-bottom-color: var(--primary-color);
 }
+
 .modern-textarea {
-    min-height: 120px; font-size: 1.2em; line-height: 1.5; resize: vertical;
+    min-height: 120px; /* Altura mínima para o campo de sugestão */
+    font-size: 1.2em; /* Fonte um pouco menor para textos longos */
+    line-height: 1.5;
+    resize: vertical; /* Permite que o usuário redimensione verticalmente */
 }
+
 .instruction {
     margin-top: 15px; color: var(--text-color-light); font-size: 0.9em;
 }
@@ -108,7 +106,9 @@ kbd {
 .final-step {
     display: flex; flex-direction: column; align-items: center; text-align: center;
 }
-.final-step h1 { font-size: 2.5em; }
+.final-step h1 {
+    font-size: 2.5em; color: var(--text-color);
+}
 .final-step p {
     font-size: 1.2em; color: var(--text-color-light); margin-bottom: 30px; max-width: 400px;
 }
