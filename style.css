@@ -37,7 +37,9 @@ body {
 .form-step {
     position: absolute; width: 100%; height: 100%; display: flex; justify-content: center;
     align-items: center; padding: 20px; box-sizing: border-box; opacity: 0;
-    transform: translateY(30px); transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+    transform: translateY(30px);
+    /* ALTERAÇÃO AQUI: Deixando a animação ainda mais rápida */
+    transition: opacity 0.2s ease-out, transform 0.2s ease-out; 
     pointer-events: none;
 }
 .form-step.active-step {

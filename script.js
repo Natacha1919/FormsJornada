@@ -27,10 +27,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    // Função para avançar para a próxima etapa com um pequeno delay
-    const nextStep = () => {
+const nextStep = () => {
         if (currentStep < formSteps.length - 1) {
-            setTimeout(() => goToStep(currentStep + 1), 300); // Delay para o usuário ver a seleção
+            // ALTERAÇÃO AQUI: Reduzindo o atraso para uma resposta quase imediata.
+            setTimeout(() => goToStep(currentStep + 1), 50); 
         }
     };
 
